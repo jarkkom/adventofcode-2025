@@ -46,7 +46,7 @@ def part2(input_data):
 
             half = len(s) // 2
 
-            for j in range(1, half + 1):
+            for j in range(half, 0, -1):
                 reps = len(s) // j
                 if s[:j] * reps == s:
                     sum += i
@@ -58,10 +58,20 @@ def part2(input_data):
 if __name__ == "__main__":
     with open("02/sample.txt") as f:
         input_data = f.read()
-        print(f"Part1 sample: {part1(input_data)}")
-        print(f"Part2 sample: {part2(input_data)}")
+        p1_sample = part1(input_data)
+        print(f"Part1 sample: {p1_sample}")
+        assert p1_sample == 1227775554
+
+        p2_sample = part2(input_data)
+        print(f"Part2 sample: {p2_sample}")
+        assert p2_sample == 4174379265
 
     with open("02/input.txt") as f:
         input_data = f.read()
-        print(f"Part1 input: {part1(input_data)}")
-        print(f"Part2 input: {part2(input_data)}")
+        p1_input = part1(input_data)
+        print(f"Part1 input: {p1_input}")
+        assert p1_input == 28146997880
+
+        p2_input = part2(input_data)
+        print(f"Part2 input: {p2_input}")
+        assert p2_input == 40028128307
