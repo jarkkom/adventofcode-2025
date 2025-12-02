@@ -21,7 +21,7 @@ def part1(input_data):
         if position == 0:
             zeros += 1
 
-    print(f"Part1: {zeros}")
+    return zeros
 
 
 def part2(input_data):
@@ -48,16 +48,26 @@ def part2(input_data):
 
             value -= 1
 
-    print(f"Part2: {zeros}")
+    return zeros
 
 
 if __name__ == "__main__":
     with open("01/sample.txt") as f:
         input_data = f.read()
-        part1(input_data)
-        part2(input_data)
+        p1_zeros = part1(input_data)
+        print(f"Part1 sample: {p1_zeros}")
+        assert p1_zeros == 3
+
+        p2_zeros = part2(input_data)
+        print(f"Part2 sample: {p2_zeros}")
+        assert p2_zeros == 6
 
     with open("01/input.txt") as f:
         input_data = f.read()
-        part1(input_data)
-        part2(input_data)
+        p1_zeros = part1(input_data)
+        print(f"Part1 input: {p1_zeros}")
+        assert p1_zeros == 1100
+
+        p2_zeros = part2(input_data)
+        print(f"Part2 input: {p2_zeros}")
+        assert p2_zeros == 6358
